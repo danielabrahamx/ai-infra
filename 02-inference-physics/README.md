@@ -31,7 +31,7 @@ Look at the `prefill` and `decode_step` NVTX ranges in the timeline.
 | `roofline.py` + tests | Verified on CPU |
 | `profile_llm.py` on CPU (prefill/decode timing, op table) | Verified on CPU |
 | CUDA profiling (Modal H100, gpt2, fp32, batch 1) | Verified. Prefill of 128 tokens: 11.5 ms. Decode: 9.3 ms/token (includes profiler overhead). GPU kernel time is about 1 ms of each 9 ms step, so this small model is launch-bound, not memory-bound. Raw output: `gpu_results/run.txt`. |
-| Nsight Systems trace | NOT YET RUN. Use `--nvtx` and wrap with `nsys profile`. |
+| Nsight Systems trace | NOT YET RUN. `nsys` would not install in the Modal container. Use `--nvtx` and wrap with `nsys profile` on a machine that has it. |
 | Qwen2.5-7B bf16, Modal H100, batch 1, 512-token prompt (HF eager) | Verified. Prefill 34.1 ms (15.0k tok/s). Decode 32.4 ms/token. HF eager decode is far above the ~4.5 ms weight-read bound (15 GB at 3.35 TB/s), so it is overhead-bound too. vLLM decodes the same size model at about 6 ms/token (stage 05). Raw: `gpu_results/run_7b.txt`. |
 
 ## Caveats

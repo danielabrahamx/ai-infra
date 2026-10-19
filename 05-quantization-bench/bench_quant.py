@@ -28,7 +28,7 @@ def run_hf(a, text):
 
 def run_vllm(a, text):
     from vllm import LLM, SamplingParams
-    llm = LLM(a.model, quantization=a.quant if a.quant != "none" else None, dtype="bfloat16",
+    llm = LLM(a.model, quantization=a.quant if a.quant != "none" else None, dtype="float16" if a.quant in ("awq", "gptq") else "bfloat16",  # AWQ kernels need fp16
               max_model_len=a.max_len + 64, gpu_memory_utilization=0.85)
     tok = llm.get_tokenizer()
     ids = tok(text).input_ids[: a.max_tokens or None]

@@ -36,7 +36,7 @@ async def main(a):
         wall = time.perf_counter() - t0
     print(json.dumps({"label": a.label, "ttft_p50_s": pct(stats["ttft"], 50),
         "ttft_p99_s": pct(stats["ttft"], 99), "itl_p50_s": pct(stats["itl"], 50),
-        "itl_p99_s": pct(stats["itl"], 99), "tok_per_s": stats["tokens"] / wall}))
+        "itl_p99_s": pct(stats["itl"], 99), "itl_p999_s": pct(stats["itl"], 99.9), "itl_max_s": max(stats["itl"]), "tok_per_s": stats["tokens"] / wall}))
 
 if __name__ == "__main__":
     p = argparse.ArgumentParser()

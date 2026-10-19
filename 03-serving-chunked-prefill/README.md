@@ -51,14 +51,19 @@ How to read:
   ```
 - vLLM flag names change between versions. Check `vllm serve --help`.
 
-## Real GPU results (Modal, 1x H100, Qwen2.5-7B-Instruct)
-60 requests at 4 req/s, 15% long prompts (about 8000 words), 128 output tokens. Single run each.
+## Real GPU results (Modal, vLLM 0.19)
+Single runs. Read max and p99.9 inter-token latency (ITL). p99 cannot see the stall: few tokens are affected.
 
-| Config | TTFT p50 | TTFT p99 | ITL p50 | ITL p99 | tok/s |
-|---|---|---|---|---|---|
-| unchunked | 28 ms | 403 ms | 7.3 ms | 11.6 ms | 453 |
-| chunk 512 | 29 ms | 533 ms | 7.6 ms | 14.4 ms | 450 |
-| chunk 2048 | 29 ms | 395 ms | 8.0 ms | 12.4 ms | 449 |
-| chunk 8192 | 30 ms | 471 ms | 8.2 ms | 13.2 ms | 449 |
+**Qwen2.5-7B-Instruct, 1x H100.** 120 requests at 3 req/s, 20% long prompts (about 8000 words), 128 output tokens.
 
-Result: no decode stall showed up. A 7B model on an H100 prefills a long prompt in a few hundred ms. At this load, chunk size made no clear difference, and the single runs are too noisy to rank the settings. The simulator's large stalls are NOT confirmed. Reproducing them needs a larger model or heavier long-context load. Raw: `gpu_results/`.
+| Config | TTFT p50 | TTFT p99 | ITL p50 | ITL p99 | ITL p99.9 | ITL max | tok/s |
+|---|---|---|---|---|---|---|---|
+| unchunked | 23 ms | 202 ms | 6.1 ms | 6.8 ms | 8.7 ms | 151 ms | 343 |
+| chunk 512 | 23 ms | 119 ms | 6.0 ms | 7.1 ms | 14.5 ms | 27 ms | 344 |
+| chunk 2048 | 23 ms | 63 ms | 6.0 ms | 6.9 ms | 18.2 ms | 67 ms | 344 |
+
+Result: unchunked prefill produced one 151 ms decode stall. Chunking cut the worst stall to 27 ms (512) and 67 ms (2048). Throughput did not change. Chunking did not raise TTFT here. The stall is real but small: a 7B model on an H100 prefills 8000 words in about 150 ms. The simulator's multi-second stalls come from its assumed step costs, not from this hardware.
+
+**Qwen2.5-72B-Instruct, 4x H100 (TP=4).** 60 requests at 2 req/s, 20% long (14000 words). This run only reported p99, so it cannot show the stall. TTFT p99 was 1.06 s (unchunked), 1.21 s (chunk 1024), 1.13 s (chunk 4096). ITL p99 was 18.7, 21.9 and 18.6 ms. Throughput was 225 tok/s in all three. Not rerun with p99.9 to save cost.
+
+Raw: `gpu_results/`. The first 7B run (`load_*.txt`, 60 requests) also lacks p99.9.
