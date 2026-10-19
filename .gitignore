@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+tools/*_log.txt
+tools/*_stdout.txt
+**/gpu_results/server_*.log

@@ -1,0 +1,8 @@
+# Per-route SLO targets. Violations are counted in Prometheus.
+[local]
+ttft_ms = 500
+itl_ms = 100
+
+[frontier]
+ttft_ms = 1500
+itl_ms = 150

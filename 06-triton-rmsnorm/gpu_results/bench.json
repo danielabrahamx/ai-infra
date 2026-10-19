@@ -1,0 +1,137 @@
+{
+  "gpu": "NVIDIA H100 80GB HBM3",
+  "results": [
+    {
+      "op": "rmsnorm",
+      "rows": 4096,
+      "cols": 512,
+      "dtype": "float16",
+      "triton_ms": 0.0097,
+      "torch_ms": 0.0097,
+      "speedup": 1.0,
+      "triton_GBps": 862.4,
+      "torch_GBps": 864.5
+    },
+    {
+      "op": "softmax",
+      "rows": 4096,
+      "cols": 512,
+      "dtype": "float16",
+      "triton_ms": 0.0086,
+      "torch_ms": 0.0106,
+      "speedup": 1.24,
+      "triton_GBps": 979.6,
+      "torch_GBps": 792.1
+    },
+    {
+      "op": "rmsnorm",
+      "rows": 4096,
+      "cols": 1024,
+      "dtype": "float16",
+      "triton_ms": 0.0118,
+      "torch_ms": 0.0129,
+      "speedup": 1.1,
+      "triton_GBps": 1426.2,
+      "torch_GBps": 1299.8
+    },
+    {
+      "op": "softmax",
+      "rows": 4096,
+      "cols": 1024,
+      "dtype": "float16",
+      "triton_ms": 0.0114,
+      "torch_ms": 0.0154,
+      "speedup": 1.35,
+      "triton_GBps": 1477.9,
+      "torch_GBps": 1091.7
+    },
+    {
+      "op": "rmsnorm",
+      "rows": 4096,
+      "cols": 2048,
+      "dtype": "float16",
+      "triton_ms": 0.0174,
+      "torch_ms": 0.019,
+      "speedup": 1.09,
+      "triton_GBps": 1929.6,
+      "torch_GBps": 1766.3
+    },
+    {
+      "op": "softmax",
+      "rows": 4096,
+      "cols": 2048,
+      "dtype": "float16",
+      "triton_ms": 0.0175,
+      "torch_ms": 0.0315,
+      "speedup": 1.8,
+      "triton_GBps": 1920.7,
+      "torch_GBps": 1066.5
+    },
+    {
+      "op": "rmsnorm",
+      "rows": 4096,
+      "cols": 4096,
+      "dtype": "float16",
+      "triton_ms": 0.0297,
+      "torch_ms": 0.0329,
+      "speedup": 1.11,
+      "triton_GBps": 2259.0,
+      "torch_GBps": 2037.1
+    },
+    {
+      "op": "softmax",
+      "rows": 4096,
+      "cols": 4096,
+      "dtype": "float16",
+      "triton_ms": 0.0304,
+      "torch_ms": 0.0598,
+      "speedup": 1.97,
+      "triton_GBps": 2207.5,
+      "torch_GBps": 1121.3
+    },
+    {
+      "op": "rmsnorm",
+      "rows": 4096,
+      "cols": 8192,
+      "dtype": "float16",
+      "triton_ms": 0.0509,
+      "torch_ms": 0.0747,
+      "speedup": 1.47,
+      "triton_GBps": 2638.9,
+      "torch_GBps": 1797.7
+    },
+    {
+      "op": "softmax",
+      "rows": 4096,
+      "cols": 8192,
+      "dtype": "float16",
+      "triton_ms": 0.0505,
+      "torch_ms": 0.139,
+      "speedup": 2.75,
+      "triton_GBps": 2657.5,
+      "torch_GBps": 965.4
+    },
+    {
+      "op": "rmsnorm",
+      "rows": 4096,
+      "cols": 16384,
+      "dtype": "float16",
+      "triton_ms": 0.0955,
+      "torch_ms": 0.1495,
+      "speedup": 1.57,
+      "triton_GBps": 2811.7,
+      "torch_GBps": 1796.0
+    },
+    {
+      "op": "softmax",
+      "rows": 4096,
+      "cols": 16384,
+      "dtype": "float16",
+      "triton_ms": 0.0953,
+      "torch_ms": 0.132,
+      "speedup": 1.38,
+      "triton_GBps": 2816.3,
+      "torch_GBps": 2034.2
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+fastapi>=0.110
+httpx>=0.27
+uvicorn>=0.29
+matplotlib>=3.8
+pytest>=8
+# optional: jsonschema>=4 (full schema validation; a minimal check is used without it)

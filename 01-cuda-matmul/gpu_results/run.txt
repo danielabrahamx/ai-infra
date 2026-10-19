@@ -1,0 +1,20 @@
+exit=0
+GPU 0: NVIDIA H100 80GB HBM3 (UUID: GPU-7fed01e6-6ebd-ab03-0602-795e0b794190)
+Build cuda_12.4.r12.4/compiler.34097967_0
+nvcc -O3 -arch=sm_90 -o bench src/bench.cu -lcublas
+M=1000 N=900 K=1100 iters=20 TILE=16
+kernel           ms    GFLOP/s  max_abs_err
+cublas       0.0562    35211.3            -
+naive        0.3480     5690.0    0.000e+00
+tiled        0.2674     7404.9    0.000e+00
+M=1024 N=1024 K=1024 iters=20 TILE=16
+kernel           ms    GFLOP/s  max_abs_err
+cublas       0.0572    37518.2            -
+naive        0.4162     5159.5    0.000e+00
+tiled        0.2816     7625.6    0.000e+00
+M=4096 N=4096 K=4096 iters=5 TILE=16
+kernel           ms    GFLOP/s  max_abs_err
+cublas       2.6317    52225.1            -
+naive       25.3271     5426.6    0.000e+00
+tiled       17.2004     7990.4    0.000e+00
+

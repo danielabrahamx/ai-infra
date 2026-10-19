@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+*.exe
+*.o
+*.obj
+*.exp
+*.lib
+build/
+bench
+results/

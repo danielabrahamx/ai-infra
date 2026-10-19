@@ -1,0 +1,37 @@
+{
+  "meta": {
+    "dataset": "wikitext-2-raw-v1 test"
+  },
+  "results": [
+    {
+      "tag": "fp16",
+      "backend": "hf",
+      "model": "Qwen/Qwen2.5-1.5B",
+      "perplexity": 10.407,
+      "eval_tokens": 298785,
+      "ms_per_token": 18.51,
+      "peak_vram_MB": 4462.0,
+      "gpu": "NVIDIA H100 80GB HBM3"
+    },
+    {
+      "tag": "vllm-bf16",
+      "backend": "vllm",
+      "model": "Qwen/Qwen2.5-1.5B",
+      "perplexity": 10.414,
+      "eval_tokens": 298785,
+      "ms_per_token": 2.36,
+      "peak_vram_MB": null,
+      "gpu": "NVIDIA H100 80GB HBM3"
+    },
+    {
+      "tag": "vllm-fp8",
+      "backend": "vllm",
+      "model": "Qwen/Qwen2.5-1.5B",
+      "perplexity": NaN,
+      "eval_tokens": 298785,
+      "ms_per_token": 2.07,
+      "peak_vram_MB": null,
+      "gpu": "NVIDIA H100 80GB HBM3"
+    }
+  ]
+}

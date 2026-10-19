@@ -1,0 +1,7 @@
+k=4 temperature=0.0 new_tokens=64
+[free  ] draft=distilgpt2 accept=0.733 (44/60) tok/target-call=2.78 target_calls=23 (baseline 64) time=114.9s (baseline 57.9s) identical_to_baseline=True
+[free  ] draft=ngram      accept=0.387 (12/31) tok/target-call=1.19 target_calls=54 (baseline 64) time=78.3s (baseline 57.9s) identical_to_baseline=True
+[free  ] sample: ' in the late 1960s, when the company began to develop a new type of transformer that was designed to'
+[repeat] draft=distilgpt2 accept=0.852 (46/54) tok/target-call=3.56 target_calls=18 (baseline 64) time=100.0s (baseline 87.1s) identical_to_baseline=True
+[repeat] draft=ngram      accept=0.962 (50/52) tok/target-call=4.57 target_calls=14 (baseline 64) time=25.1s (baseline 87.1s) identical_to_baseline=True
+[repeat] sample: ' five six six seven one two three four five six six seven one two three four five six six seven one '

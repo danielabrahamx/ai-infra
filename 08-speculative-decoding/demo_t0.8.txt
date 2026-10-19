@@ -1,0 +1,7 @@
+k=4 temperature=0.8 new_tokens=64
+[free  ] draft=distilgpt2 accept=0.733 (44/60) tok/target-call=3.05 target_calls=21 (baseline 64) time=165.9s (baseline 74.7s) identical_to_baseline=n/a (sampling)
+[free  ] draft=ngram      accept=0.000 (0/13) tok/target-call=1.00 target_calls=64 (baseline 64) time=174.5s (baseline 74.7s) identical_to_baseline=n/a (sampling)
+[free  ] sample: ' when a 32-year-old Renmin Energy engineer named Brian Olmstead began to work hard at transforming t'
+[repeat] draft=distilgpt2 accept=0.842 (48/57) tok/target-call=3.37 target_calls=19 (baseline 64) time=113.2s (baseline 127.1s) identical_to_baseline=n/a (sampling)
+[repeat] draft=ngram      accept=0.714 (25/35) tok/target-call=1.64 target_calls=39 (baseline 64) time=16.8s (baseline 127.1s) identical_to_baseline=n/a (sampling)
+[repeat] sample: ' five six six seven one 2 2 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28'

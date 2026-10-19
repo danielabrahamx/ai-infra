@@ -1,0 +1,7 @@
+torch
+transformers
+huggingface_hub>=1.5,<2
+pandas
+pyarrow
+pytest
+# GPU only (optional): vllm, autoawq, gptqmodel

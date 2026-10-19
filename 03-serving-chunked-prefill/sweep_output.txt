@@ -1,0 +1,9 @@
+unchunked B= 32768 TTFTp50=     1479 TTFTp99=     7406 ITLp50=    8.4 ITLp99=     9.6 p99.9=  6041.7 tok/s=  149.4
+chunked   B=   256 TTFTp50=     3231 TTFTp99=    10093 ITLp50=    8.4 ITLp99=    38.6 p99.9=    38.7 tok/s=  149.4
+chunked   B=   512 TTFTp50=     2497 TTFTp99=     8442 ITLp50=    8.4 ITLp99=    69.3 p99.9=    69.4 tok/s=  149.4
+chunked   B=  1024 TTFTp50=     1978 TTFTp99=     7938 ITLp50=    8.4 ITLp99=   130.7 p99.9=   130.8 tok/s=  149.4
+chunked   B=  2048 TTFTp50=     1644 TTFTp99=     7814 ITLp50=    8.5 ITLp99=   253.5 p99.9=   253.7 tok/s=  149.4
+chunked   B=  4096 TTFTp50=     1549 TTFTp99=     7641 ITLp50=    8.5 ITLp99=   499.1 p99.9=   499.4 tok/s=  149.4
+chunked   B=  8192 TTFTp50=     1495 TTFTp99=     7601 ITLp50=    8.5 ITLp99=   989.6 p99.9=   990.9 tok/s=  149.4
+chunked   B= 32768 TTFTp50=     1471 TTFTp99=     7407 ITLp50=    8.4 ITLp99=    47.0 p99.9=  3496.9 tok/s=  149.4
+wrote plot.png

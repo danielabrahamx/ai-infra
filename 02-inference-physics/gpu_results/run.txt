@@ -1,0 +1,27 @@
+exit=0
+GPU 0: NVIDIA H100 80GB HBM3 (UUID: GPU-61bd81a8-2b1b-3ad5-9bed-6cf8ee432cb3)
+model=gpt2 device=cuda dtype=float32 batch=1
+prefill (128 tokens): 11.49 ms  (11140 tok/s)
+decode  (16 steps):  mean 9.30 ms/token  (108 tok/s)
+KV cache at end: 10368.0 KiB
+
+Top ops by cuda_time_total:
+----------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+                                    Name    Self CPU %      Self CPU   CPU total %     CPU total  CPU time avg     Self CUDA   Self CUDA %    CUDA total  CUDA time avg    # of Calls  
+----------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+                             decode_step         0.00%       0.000us         0.00%       0.000us       0.000us     147.431ms       781.30%     147.431ms       9.214ms            16  
+                             decode_step        31.91%      51.642ms        92.47%     149.645ms       9.353ms       0.000us         0.00%      15.808ms     987.973us            16  
+                                 prefill         0.00%       0.000us         0.00%       0.000us       0.000us       9.477ms        50.22%       9.477ms       9.477ms             1  
+                             aten::addmm         8.59%      13.907ms        15.13%      24.482ms      30.003us       8.271ms        43.83%       8.271ms      10.136us           816  
+      aten::scaled_dot_product_attention         1.01%       1.637ms         7.00%      11.335ms      55.562us       0.000us         0.00%       4.225ms      20.712us           204  
+aten::_scaled_dot_product_efficient_a...         1.11%       1.802ms         5.99%       9.697ms      47.536us       0.000us         0.00%       4.225ms      20.712us           204  
+      aten::_efficient_attention_forward         1.37%       2.214ms         3.35%       5.422ms      26.576us       4.225ms        22.39%       4.225ms      20.712us           204  
+fmha_cutlassF_f32_aligned_64x64_rf_sm...         0.00%       0.000us         0.00%       0.000us       0.000us       4.225ms        22.39%       4.225ms      20.712us           204  
+----------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+Self CPU time total: 161.827ms
+Self CUDA time total: 18.870ms
+
+
+`torch_dtype` is deprecated! Use `dtype` instead!
+/usr/local/lib/python3.11/site-packages/torch/profiler/profiler.py:217: UserWarning: Warning: Profiler clears events at the end of each cycle.Only events from the current cycle will be reported.To keep events across cycles, set acc_events=True.
+  _warn_once(

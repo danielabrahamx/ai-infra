@@ -1,0 +1,19 @@
+# Example KEDA ScaledObject: scale a GPU Deployment on a Redis list length.
+# Example only. NOT applied to any cluster. Names and addresses are placeholders.
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: gpu-inference-scaler
+spec:
+  scaleTargetRef:
+    name: gpu-inference          # Deployment to scale
+  minReplicaCount: 0             # scale to zero
+  maxReplicaCount: 8
+  pollingInterval: 5             # seconds between queue checks
+  cooldownPeriod: 300            # seconds idle before going to zero
+  triggers:
+    - type: redis
+      metadata:
+        address: redis.default.svc:6379
+        listName: requests:pending
+        listLength: "10"         # target pending requests per replica

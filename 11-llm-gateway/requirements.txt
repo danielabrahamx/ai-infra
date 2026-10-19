@@ -1,0 +1,6 @@
+fastapi>=0.110
+httpx>=0.27
+uvicorn>=0.29
+prometheus-client>=0.20
+pytest>=8
+# optional: opentelemetry-api>=1.24 (spans become real if installed and an SDK/exporter is configured)

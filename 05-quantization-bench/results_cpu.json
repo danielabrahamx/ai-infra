@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "model": "gpt2",
+    "device": "cpu",
+    "dataset": "wikitext-2-raw-v1 test",
+    "note": "fake-quant: weights dequantized to fp32. Latency is NOT an INT kernel speed."
+  },
+  "results": [
+    {
+      "config": "fp32",
+      "perplexity": 40.462,
+      "eval_tokens": 10220,
+      "ms_per_token_cpu": 67.05,
+      "linear_weight_MB": null,
+      "compression_vs_fp16": 1.0,
+      "ppl_delta": 0.0
+    },
+    {
+      "config": "int8-g128",
+      "perplexity": 40.497,
+      "eval_tokens": 10220,
+      "ms_per_token_cpu": 75.97,
+      "linear_weight_MB": 82.3,
+      "compression_vs_fp16": 1.97,
+      "ppl_delta": 0.035
+    },
+    {
+      "config": "int4-g128",
+      "perplexity": 47.701,
+      "eval_tokens": 10220,
+      "ms_per_token_cpu": 68.22,
+      "linear_weight_MB": 41.8,
+      "compression_vs_fp16": 3.88,
+      "ppl_delta": 7.239
+    },
+    {
+      "config": "int4-g64",
+      "perplexity": 47.009,
+      "eval_tokens": 10220,
+      "ms_per_token_cpu": 71.38,
+      "linear_weight_MB": 43.0,
+      "compression_vs_fp16": 3.76,
+      "ppl_delta": 6.547
+    },
+    {
+      "config": "int4-g32",
+      "perplexity": 44.077,
+      "eval_tokens": 10220,
+      "ms_per_token_cpu": 67.38,
+      "linear_weight_MB": 45.6,
+      "compression_vs_fp16": 3.56,
+      "ppl_delta": 3.615
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+torch
+pytest
+# GPU only: triton (Linux/WSL) or triton-windows (Windows)

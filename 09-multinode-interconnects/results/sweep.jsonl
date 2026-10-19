@@ -1,0 +1,9 @@
+{"backend": "gloo", "topology": "intra-node", "label": "gloo-loopback", "world_size": 2, "bytes": 1024, "time_us": 1387.7599994884804, "algbw_GBps": 0.0007378797489316885, "busbw_GBps": 0.0007378797489316885}
+{"backend": "gloo", "topology": "intra-node", "label": "gloo-loopback", "world_size": 2, "bytes": 4096, "time_us": 994.6350008249283, "algbw_GBps": 0.004118093568598399, "busbw_GBps": 0.004118093568598399}
+{"backend": "gloo", "topology": "intra-node", "label": "gloo-loopback", "world_size": 2, "bytes": 16384, "time_us": 967.8150003310293, "algbw_GBps": 0.01692885519897507, "busbw_GBps": 0.01692885519897507}
+{"backend": "gloo", "topology": "intra-node", "label": "gloo-loopback", "world_size": 2, "bytes": 65536, "time_us": 1575.2749983221292, "algbw_GBps": 0.041602894776978164, "busbw_GBps": 0.041602894776978164}
+{"backend": "gloo", "topology": "intra-node", "label": "gloo-loopback", "world_size": 2, "bytes": 262144, "time_us": 6535.014999099076, "algbw_GBps": 0.04011375643914199, "busbw_GBps": 0.04011375643914199}
+{"backend": "gloo", "topology": "intra-node", "label": "gloo-loopback", "world_size": 2, "bytes": 1048576, "time_us": 28731.235000304878, "algbw_GBps": 0.036496029495038176, "busbw_GBps": 0.036496029495038176}
+{"backend": "gloo", "topology": "intra-node", "label": "gloo-loopback", "world_size": 2, "bytes": 4194304, "time_us": 69699.17000096757, "algbw_GBps": 0.060177244577543386, "busbw_GBps": 0.060177244577543386}
+{"backend": "gloo", "topology": "intra-node", "label": "gloo-loopback", "world_size": 2, "bytes": 16777216, "time_us": 257699.14999837056, "algbw_GBps": 0.06510388567485023, "busbw_GBps": 0.06510388567485023}
+{"backend": "gloo", "topology": "intra-node", "label": "gloo-loopback", "world_size": 2, "bytes": 67108864, "time_us": 1011456.0700021684, "algbw_GBps": 0.06634876787071546, "busbw_GBps": 0.06634876787071546}

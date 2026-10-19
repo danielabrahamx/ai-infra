@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+.env
+# Real benchmark results are committed on purpose. Ignore scratch runs only:
+results/scratch-*

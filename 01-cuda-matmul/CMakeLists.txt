@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 3.18)
+project(cuda_matmul LANGUAGES CXX CUDA)
+set(CMAKE_CUDA_STANDARD 14)
+# Default to RTX 2050 (sm_86). Override: -DCMAKE_CUDA_ARCHITECTURES=80
+if(NOT DEFINED CMAKE_CUDA_ARCHITECTURES)
+  set(CMAKE_CUDA_ARCHITECTURES 86)
+endif()
+find_package(CUDAToolkit REQUIRED)
+add_executable(bench src/bench.cu)
+target_link_libraries(bench PRIVATE CUDA::cublas)

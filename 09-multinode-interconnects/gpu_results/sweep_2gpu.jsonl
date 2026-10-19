@@ -1,0 +1,8 @@
+{"backend": "nccl", "topology": "intra-node", "label": "nvlink_2gpu", "world_size": 2, "bytes": 1024, "time_us": 24.785699999796407, "algbw_GBps": 0.04131414484999057, "busbw_GBps": 0.04131414484999057}
+{"backend": "nccl", "topology": "intra-node", "label": "nvlink_2gpu", "world_size": 2, "bytes": 4096, "time_us": 19.218399999942903, "algbw_GBps": 0.21312908462786542, "busbw_GBps": 0.21312908462786542}
+{"backend": "nccl", "topology": "intra-node", "label": "nvlink_2gpu", "world_size": 2, "bytes": 16384, "time_us": 17.36875000020177, "algbw_GBps": 0.9433033465165697, "busbw_GBps": 0.9433033465165697}
+{"backend": "nccl", "topology": "intra-node", "label": "nvlink_2gpu", "world_size": 2, "bytes": 65536, "time_us": 18.74140000026614, "algbw_GBps": 3.4968572251309586, "busbw_GBps": 3.4968572251309586}
+{"backend": "nccl", "topology": "intra-node", "label": "nvlink_2gpu", "world_size": 2, "bytes": 262144, "time_us": 22.4263999999863, "algbw_GBps": 11.689080726294016, "busbw_GBps": 11.689080726294016}
+{"backend": "nccl", "topology": "intra-node", "label": "nvlink_2gpu", "world_size": 2, "bytes": 1048576, "time_us": 20.969249999680528, "algbw_GBps": 50.00541268838777, "busbw_GBps": 50.00541268838777}
+{"backend": "nccl", "topology": "intra-node", "label": "nvlink_2gpu", "world_size": 2, "bytes": 4194304, "time_us": 33.63440000008211, "algbw_GBps": 124.7028042715125, "busbw_GBps": 124.7028042715125}
+{"backend": "nccl", "topology": "intra-node", "label": "nvlink_2gpu", "world_size": 2, "bytes": 16777216, "time_us": 75.68925000001059, "algbw_GBps": 221.65916560142495, "busbw_GBps": 221.65916560142495}
